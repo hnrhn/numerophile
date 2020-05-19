@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Numerophile</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header><h1>Numerophile</h1></header>
+    <div id="advancedToggleBox" class="padded">
+      <label>
+        Advanced Mode:
+        <input id="advancedToggle" type="checkbox" onclick="toggleHidden(document.getElementById('advanced'))">
+      </label>
+    </div>
+    <main class="padded">
+      <h2>Choose a folder:</h2> <button onclick="chooseDirectory()">Select...</button>
+      <span id="chosenDirectory"></span>
+
+      <h2>Number all files</h2>
+      <p>This will rename all files in the chosen folder with a <b>(123)_</b> prefix, starting at your selected number.</p>
+      <p>Any files which already have a <b>(123)_</b> prefix will be left alone*</p>
+      <label>
+        <b>Start from:</b>
+        <input id="startFrom" type="number">
+      </label>
+      <br><br>
+      <button onclick="numberAll(document.getElementById('chosenDirectory').innerText, parseInt(document.getElementById('startFrom').value), document.getElementById('force').checked)">GO</button>
+      <br>
+      <small>*Unless padding with a zero is required to keep files in the same "alpha-numerical" order.</small>
+    </main>
+    <div id="advanced" class="hidden padded">
+      <hr>
+      <h1>Advanced Options</h1>
+      <p>These options have the capability to <b>completely destroy</b> your numbering system. Do <b>not</b> use them if you do not know exactly what you are doing.</p>
+      <div>
+        <h2>De-number all files</h2>
+        <p>This will remove all "(123)_" prefixes from all files in the chosen range (inclusive)</p>
+        <label>
+          <b>From:</b>
+          <input id="deNumberFrom" type="number">
+        </label>
+        <label>
+          <b>To:</b>
+          <input id="deNumberTo" type="number">
+        </label>
+        <br><br>
+        <button onclick="deNumberRange(document.getElementById('chosenDirectory').innerText, parseInt(document.getElementById('deNumberFrom').value), parseInt(document.getElementById('deNumberTo').value))">DeNumber</button>
+      </div>
+      <div>
+        <h2>Numbering override</h2>
+        <p><i>Example:</i> By default, if there is a file with a prefix of (100)_, and you choose a starting value of 99, the program
+          will not allow you to continue, as this will cause you to have <b>two</b> files with the same "unique" ID</p>
+        <p>This option overrides that behaviour.</p>
+        <label>
+          Override duplicate check:
+          <input id="force" type="checkbox">
+        </label>
+      </div>
+    </div>
+    <br><br><br>
+  </body>
+  <script src="numerophile.js"></script>
+</html>

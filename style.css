@@ -1,0 +1,51 @@
+html {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    min-height: 60px;
+    margin: 0;
+    background-color: cornflowerblue;
+}
+
+header > h1 {
+    margin: 0;
+    padding: 1rem;
+    color: #ffffff;
+}
+
+#advanced>h1 {
+    color: red;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.padded {
+    padding: 0 1rem 0 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#advancedToggleBox {
+    float: right;
+}
+
+button {
+    background-color: #43c479;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "numerophile",
+  "version": "1.0.0-beta1",
+  "description": "Quickly number, re-number, and de-number files in a directory",
+  "main": "main.js",
+  "repository": "https://github.com/hnrhn/numerophile",
+  "author": "Peter Hanrahan",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^8.0.3",
+    "electron-builder": "^22.3.6"
+  },
+  "build": {
+    "appId": "com.hnrhn.numerophile"
+  },
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "start": "electron ."
+  }
+}
